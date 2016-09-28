@@ -1,0 +1,64 @@
+Week 1 Quiz Answers
+--------------------
+What would happen if we call gcd(m,n) with m positive and n negative in the following definition? 
+
+def gcd(m,n):
+
+    if m < n: 
+        (m,n) = (n,m)
+
+    if (m % n) == 0:
+        return(n)
+    else:
+        diff = m-n
+        return (gcd(max(n,diff),min(n,diff)))
+
+ The function would still compute gcd correctly.
+ The function would not terminate.
+ The behaviour depends on the exact values of m and n.
+
+Correct answer: (c) The behaviour depends on the exact values of m and n
+Try it out in the Python interpreter and see for yourself!
+
+What does f(1782818) return, for the following function definition:
+
+def f(x):
+  d=0
+  while x > 1:
+    (d,x) = (d+1,x/10)
+  return(d)
+
+Correct answer: 7
+The loop counts the number of digits in x. The number of digits is the number of times you can divide x by 10 before the 
+value goes below 1.
+
+What can we say about a number n if g(n) returns True for the function g given below?
+
+def g(n):
+  for i in range(2,n):
+    if n%i == 0:
+       return(False)
+
+  return(True)
+
+ n is a prime number.
+ n is a composite number.
+ n is multiple of 2.
+ None of the above.
+
+Correct answer: (a) n is a prime number
+The loop returns False if a divisor is found between 2 and n-1. If the loop exits, there are no divisors of n other than 1 
+and n, so n is a prime.
+
+What is the value of h(5,4) for the function below?
+
+def h(m,n):
+  ans = 1
+  while (n > 0):
+    (ans,n) = (ans*m,n-1) 
+  return(ans)
+  
+
+Correct answer: 625
+The function computes m**n by repeatedly multiplying m by itself n times. 5**4 is 625.
+
